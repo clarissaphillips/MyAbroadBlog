@@ -1,0 +1,52 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+  <title>Add an entry to Clarissa's Abroad Blog</title>
+  <style type="text/css">
+       h3 { margin-left: 10px;}
+   .block { position: relative;
+            margin-left: 100px;
+            text-align: left;
+            overflow: visible;}
+   .title { position: absolute;
+            left: -90px;
+            display: inline-block;
+            text-align: left;}
+  </style>
+</head>
+<body>
+  <h3>Add an entry to Clarissa's Abroad Blog...</h3>
+  <div class="block">
+  <p>
+    <span class="title">Instructions: Enter a title and body for your blog entry. In the body, you can use simple HTML formatting elements, such as &#60;b&#62; (<b>bold</b>) and &#60;i&#62; (<i>italic</i>), as well as the hyperlink "anchor" element &#60;a&#62;.</span></br>
+  </p>
+  <form id="myForm" action="addentry.php" method ="post">
+    <p>
+    </br></br>
+      <span class="title">Title:</span> <input type = "text" name = "title" size="50"/>
+      <br/></br>
+      <span class="title">Body:</span> <textarea name = "body" rows="20" cols="80"/></textarea>
+      <br/>
+      <input type = "submit" value="Add Entry"/>
+      <input type = "button" id="clearButton" name = "clearButton" value="Clear"/>
+    </p>
+  </div>
+  </form>
+  <script type="text/javascript">
+    function resetform() {
+      var input = window.confirm("Are you sure you want to clear this form?");
+      if (input != true) {
+        return;
+      }
+      else {
+        document.forms[0].reset();
+      }
+    }
+    var dom = document.forms[0].elements[3];
+    dom.onclick = resetform;
+  </script>
+</body>
+</html>
